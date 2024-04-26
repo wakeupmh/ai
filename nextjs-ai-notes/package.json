@@ -11,10 +11,17 @@
   "dependencies": {
     "@clerk/nextjs": "^5.0.2",
     "@clerk/themes": "^2.0.1",
+    "@hookform/resolvers": "^3.3.4",
     "@pinecone-database/pinecone": "^2.2.0",
     "@prisma/client": "^5.13.0",
+    "@radix-ui/react-dialog": "^1.0.5",
+    "@radix-ui/react-label": "^2.0.2",
+    "@radix-ui/react-slot": "^1.0.2",
     "ai": "^3.0.31",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
     "eslint-config-prettier": "^9.1.0",
+    "lucide-react": "^0.373.0",
     "next": "14.2.3",
     "next-themes": "^0.3.0",
     "openai": "^4.38.4",
@@ -22,7 +29,11 @@
     "prettier-plugin-tailwindcss": "^0.5.14",
     "prisma": "^5.13.0",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-hook-form": "^7.51.3",
+    "tailwind-merge": "^2.3.0",
+    "tailwindcss-animate": "^1.0.7",
+    "zod": "^3.23.4"
   },
   "devDependencies": {
     "@types/node": "^20",
