@@ -2,8 +2,8 @@ import { SignIn } from "@clerk/nextjs";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "AiNotes - Sign In",
-    description: "a note taking app that uses AI to help you take notes",
+  title: "AiNotes - Sign In",
+  description: "a note taking app that uses AI to help you take notes",
 }
 export default function SignInPage() {
   return (
