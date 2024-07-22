@@ -1,0 +1,19 @@
+commit-msg:
+  commands:
+    lint-commit-msg:
+      run: npx --no-install commitlint --edit
+
+pre-commit:
+  parallel: true
+  commands:
+    eslint:
+      glob: "*.ts"
+      run: npm run lint:staged-files -- {staged_files}
+      stage_fixed: true
+    prettier:
+      glob: "*.{ts,tsx,js,jsx,json,yml,yaml}"
+      run: npx --no-install prettier {staged_files} --write
+      stage_fixed: true
+    test:
+      glob: "**/*.spec.ts"
+      run: npm run test -- --passWithNoTests --findRelatedTests {staged_files}
