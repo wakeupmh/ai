@@ -77,7 +77,6 @@ class Lambda extends NodejsFunction {
       tracing: Tracing.ACTIVE,
       logRetention: isProd ? RetentionDays.ONE_YEAR : RetentionDays.ONE_WEEK,
       environment: {
-        // NODE_OPTIONS: '--enable-source-maps',
         ENV_NAME: config.envName,
         AWS_NODEJS_CONNECTION_REUSE_ENABLED: '1',
         POWERTOOLS_SERVICE_NAME: config.serviceName,
@@ -91,15 +90,10 @@ class Lambda extends NodejsFunction {
       bundling: {
         minify: true, // minify code, defaults to false
         sourceMap: false, // include source map, defaults to false
-        // sourceMapMode: SourceMapMode.INLINE, // defaults to SourceMapMode.DEFAULT
-        // sourcesContent: false, // do not include original source into source map, defaults to true
         target: 'es2021', // target environment for the generated JavaScript code
         logLevel: LogLevel.ERROR,
         define: {
-          // 'process.env.COUNTRY': JSON.stringify('France'),
         },
-        // banner: '/* comments */',
-        // footer: '/* comments */',
         externalModules: [
           // '@aws-sdk/lib-dynamodb',
           // '@aws-sdk/client-dynamodb',
@@ -111,14 +105,6 @@ class Lambda extends NodejsFunction {
           '@aws-lambda-powertools/logger',
           '@aws-lambda-powertools/tracer',
           '@aws-lambda-powertools/metrics',
-          // Remove knex modules
-          'pg',
-          'tedious',
-          'oracledb',
-          'better-sqlite3',
-          'mysql',
-          'pg-query-stream',
-          'sqlite3',
         ],
       },
       memorySize: config.defaultMemorySize,
