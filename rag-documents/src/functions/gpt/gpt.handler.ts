@@ -11,10 +11,6 @@ export const handler = async (event: any) => {
 
   try {
     await useCase.execute(event.Payload)
-
-    return {
-      ...event.Payload,
-    }
   } catch (error: any) {
     console.error(error)
     throw error

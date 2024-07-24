@@ -10,7 +10,7 @@ export class GPTRag {
     console.log("GPTRag executed with payload: ", payload)
 
     try {
-      const file = await this.s3.getObject('bkt-clinical-results', 'result-24682904.pdf')
+      const file = await this.s3.getObject(`rag-summit-documents-${process.env.ACCOUNT}`, 'result.pdf')
       const chunks = []
       for await (const chunk of file!.body) {
         chunks.push(chunk)

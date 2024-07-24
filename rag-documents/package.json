@@ -7,7 +7,7 @@
   "scripts": {
     "co:login": "sh ./login.sh",
     "build": "tsc",
-    "debug": "export $(cat local.env | xargs) && export $(cat aws.env | xargs) && npm run test:local src/functions/service-requests/sfn/setup/setup.local.ts",
+    "debug": "export $(cat local.env | xargs) && export $(cat aws.env | xargs) && npm run test:local src/functions/bedrock/bedrock.local.ts",
     "watch": "tsc -w",
     "test:local": "npm run tl",
     "test": "jest --passWithNoTests --silent --noStackTrace --runInBand",
@@ -62,9 +62,9 @@
     "typescript": "5.1"
   },
   "dependencies": {
+    "@llamaindex/community": "^0.0.23",
+    "llamaindex": "^0.5.7",
     "@aws-sdk/client-secrets-manager": "^3.556.0",
-    "@aws-sdk/client-sfn": "^3.614.0",
-    "@middy/core": "^4.6.0",
     "aws-cdk-lib": "^2.93.0",
     "aws-xray-sdk": "^3.5.3",
     "axios": "^1.6.5",
