@@ -4,7 +4,7 @@ import * as cdk from 'aws-cdk-lib'
 
 import { makeConfig } from '../infra/config'
 import { FunctionStackProps } from '../infra/interfaces/functions-stack-props.interface'
-import { ResourcesStack } from '../infra/stacks'
+import { RagLambdaStack, ResourcesStack } from '../infra/stacks'
 
 const app = new cdk.App()
 
@@ -25,3 +25,5 @@ const stackParams: FunctionStackProps = {
     region: config.region,
   },
 }
+
+new RagLambdaStack(app, 'root-rag-lambda-stack', stackParams)

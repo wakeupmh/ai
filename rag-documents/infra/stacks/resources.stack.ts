@@ -1,8 +1,8 @@
-import { Stack, StackProps } from 'aws-cdk-lib'
+import { Duration, RemovalPolicy, Stack, StackProps } from 'aws-cdk-lib'
 import { ITable } from 'aws-cdk-lib/aws-dynamodb'
 import { ISecurityGroup, IVpc, SecurityGroup, Vpc } from 'aws-cdk-lib/aws-ec2'
 import { IFunction } from 'aws-cdk-lib/aws-lambda'
-import { IBucket } from 'aws-cdk-lib/aws-s3'
+import { Bucket, IBucket, StorageClass } from 'aws-cdk-lib/aws-s3'
 import { ISecret } from 'aws-cdk-lib/aws-secretsmanager'
 import { IReceiptRuleSet } from 'aws-cdk-lib/aws-ses'
 import { Construct } from 'constructs'
@@ -21,9 +21,7 @@ export class ResourcesStack extends Stack {
   public readonly table: ITable
   public readonly tableIndexes: ITable
 
-  public mailDeliveryBucket: IBucket
-  public mailReceivedLambda: IFunction
-  public mailReceivedRuleSet: IReceiptRuleSet
+  public ragDocumentsBkt: IBucket
 
   constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props)
@@ -47,15 +45,19 @@ export class ResourcesStack extends Stack {
       this.sharedVpc,
     )
 
-    // const tableArn = Fn.importValue('infrastructure::dynamodb-table::sample::arn')
-    // this.table = Table.fromTableArn(this, `sample-table`, tableArn)
-
-    // this.tableIndexes = Table.fromTableArn(
-    //   this,
-    //   'sample-table-index',
-    //   `${Fn.importValue('infrastructure::dynamodb-table::sample::arn')}/*`,
-    // )
-
-    // this.secret = new Secret(this, `sample-domain-secret`, { description: 'Sample Domain Secret' })
+    this.ragDocumentsBkt = new Bucket(this, 'rag-documents-bucket', {
+      bucketName: `rag-documents-${process.env.ACCOUNT}`,
+      removalPolicy: RemovalPolicy.DESTROY,
+      lifecycleRules: [
+        {
+          transitions: [
+            {
+              storageClass: StorageClass.GLACIER,
+              transitionAfter: Duration.days(30),
+            },
+          ],
+        },
+      ],
+    })
   }
 }

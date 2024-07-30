@@ -10,7 +10,7 @@ export const handler = async (event: any) => {
   const useCase = useCaseResolver()
 
   try {
-    await useCase.execute(event.Payload)
+    await useCase.execute()
 
     return {
       ...event.Payload,
