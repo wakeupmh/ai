@@ -3,17 +3,15 @@ import { BEDROCK_MODELS, Bedrock } from '@llamaindex/community'
 import { StorageInterface } from '../../interfaces/storage.interface'
 
 export default class BedrockRag {
-  constructor(
-    protected readonly s3: StorageInterface
-  ){}
+  constructor(protected readonly s3: StorageInterface) {}
 
-  async execute() {
+  async execute(query: string) {
     try {
       Settings.llm = new Bedrock({
         model: BEDROCK_MODELS.ANTHROPIC_CLAUDE_3_HAIKU,
       })
 
-      const file = await this.s3.getObject(`rag-summit-documents-${process.env.ACCOUNT}`, 'result.pdf')
+      const file = await this.s3.getObject(process.env.BKT_NAME!, 'result.pdf')
       const chunks = []
       for await (const chunk of file!.body) {
         chunks.push(chunk)
@@ -28,7 +26,7 @@ export default class BedrockRag {
       // Query the index
       const queryEngine = index.asQueryEngine()
       const response = await queryEngine.query({
-        query: 'O que é este arquivo?',
+        query,
       })
       // Output response
       console.log(response.message.content)

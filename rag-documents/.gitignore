@@ -4,3 +4,4 @@ aws.env
 local.env
 .npmrc
 login.sh
+.DS_Store

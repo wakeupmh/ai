@@ -2,15 +2,13 @@ import { PDFReader, VectorStoreIndex } from 'llamaindex'
 import { StorageInterface } from '../../interfaces/storage.interface'
 
 export class GPTRag {
-  constructor(
-    protected readonly s3: StorageInterface
-  ){}
+  constructor(protected readonly s3: StorageInterface) {}
 
-  async execute(payload: any) {
-    console.log("GPTRag executed with payload: ", payload)
+  async execute(query: string) {
+    console.log('GPTRag executed with payload: ', query)
 
     try {
-      const file = await this.s3.getObject(`rag-summit-documents-${process.env.ACCOUNT}`, 'result.pdf')
+      const file = await this.s3.getObject(process.env.BKT_NAME!, 'result.pdf')
       const chunks = []
       for await (const chunk of file!.body) {
         chunks.push(chunk)
@@ -25,7 +23,7 @@ export class GPTRag {
       // Query the index
       const queryEngine = index.asQueryEngine()
       const response = await queryEngine.query({
-        query: 'What is this file?',
+        query,
       })
       // Output response
       console.log(response.toString())
