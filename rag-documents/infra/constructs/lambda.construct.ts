@@ -92,15 +92,10 @@ class Lambda extends NodejsFunction {
         sourceMap: false, // include source map, defaults to false
         target: 'es2021', // target environment for the generated JavaScript code
         logLevel: LogLevel.ERROR,
-        define: {
+        loader: {
+          ".node": "file",
         },
         externalModules: [
-          // '@aws-sdk/lib-dynamodb',
-          // '@aws-sdk/client-dynamodb',
-          // '@aws-sdk/client-sns',
-          // '@aws-sdk/client-sqs',
-          // '@aws-sdk/client-ses',
-          // '@aws-sdk/client-s3',
           '@aws-lambda-powertools/commons',
           '@aws-lambda-powertools/logger',
           '@aws-lambda-powertools/tracer',

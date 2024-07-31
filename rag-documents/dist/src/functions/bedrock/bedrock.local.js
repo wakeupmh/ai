@@ -1,0 +1,7 @@
+"use strict";
+/* eslint-disable @typescript-eslint/no-empty-function */
+Object.defineProperty(exports, "__esModule", { value: true });
+const bedrock_handler_1 = require("./bedrock.handler");
+const event = {};
+(0, bedrock_handler_1.handler)(event);
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYmVkcm9jay5sb2NhbC5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uL3NyYy9mdW5jdGlvbnMvYmVkcm9jay9iZWRyb2NrLmxvY2FsLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7QUFBQSx5REFBeUQ7O0FBRXpELHVEQUEyQztBQUUzQyxNQUFNLEtBQUssR0FBRyxFQUFFLENBQUE7QUFFaEIsSUFBQSx5QkFBTyxFQUFDLEtBQVksQ0FBQyxDQUFBIiwic291cmNlc0NvbnRlbnQiOlsiLyogZXNsaW50LWRpc2FibGUgQHR5cGVzY3JpcHQtZXNsaW50L25vLWVtcHR5LWZ1bmN0aW9uICovXG5cbmltcG9ydCB7IGhhbmRsZXIgfSBmcm9tICcuL2JlZHJvY2suaGFuZGxlcidcblxuY29uc3QgZXZlbnQgPSB7fVxuXG5oYW5kbGVyKGV2ZW50IGFzIGFueSlcbiJdfQ==
