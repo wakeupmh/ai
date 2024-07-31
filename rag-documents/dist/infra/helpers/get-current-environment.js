@@ -1,8 +1,0 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.getCurrentEnvironment = void 0;
-const getCurrentEnvironment = () => {
-    return (process.env.environment || 'dev').toLocaleLowerCase();
-};
-exports.getCurrentEnvironment = getCurrentEnvironment;
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZ2V0LWN1cnJlbnQtZW52aXJvbm1lbnQuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi9pbmZyYS9oZWxwZXJzL2dldC1jdXJyZW50LWVudmlyb25tZW50LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7OztBQUFPLE1BQU0scUJBQXFCLEdBQUcsR0FBRyxFQUFFO0lBQ3hDLE9BQU8sQ0FBQyxPQUFPLENBQUMsR0FBRyxDQUFDLFdBQVcsSUFBSSxLQUFLLENBQUMsQ0FBQyxpQkFBaUIsRUFBRSxDQUFBO0FBQy9ELENBQUMsQ0FBQTtBQUZZLFFBQUEscUJBQXFCLHlCQUVqQyIsInNvdXJjZXNDb250ZW50IjpbImV4cG9ydCBjb25zdCBnZXRDdXJyZW50RW52aXJvbm1lbnQgPSAoKSA9PiB7XG4gIHJldHVybiAocHJvY2Vzcy5lbnYuZW52aXJvbm1lbnQgfHwgJ2RldicpLnRvTG9jYWxlTG93ZXJDYXNlKClcbn1cbiJdfQ==
