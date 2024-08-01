@@ -16,7 +16,6 @@ dotenv.config();
 async function loadAndIndex() {
   // load objects from storage and convert them into LlamaIndex Document objects
   const documents = await getDocuments();
-
   // create postgres vector store
   const vectorStore = new PGVectorStore({
     connectionString: process.env.PG_CONNECTION_STRING,

@@ -65,7 +65,7 @@ export async function POST(request: NextRequest) {
     const userMessageContent = convertMessageContent(
       userMessage.content,
       annotations,
-    );
+    ); 
 
     // Setup callbacks
     const callbackManager = createCallbackManager(vercelStreamData);
@@ -78,7 +78,7 @@ export async function POST(request: NextRequest) {
         stream: true,
       });
     });
-
+    
     // Transform LlamaIndex stream to Vercel/AI format
     const stream = LlamaIndexStream(
       response,
@@ -88,6 +88,7 @@ export async function POST(request: NextRequest) {
 
     // Return a StreamingTextResponse, which can be consumed by the Vercel/AI client
     return new StreamingTextResponse(stream, {}, vercelStreamData);
+    
   } catch (error) {
     console.error("[LlamaIndex]", error);
     return NextResponse.json(
