@@ -94,7 +94,7 @@ export default function ChatInput(
         <Input
           autoFocus
           name="message"
-          placeholder="Type a message"
+          placeholder="Escreva algo..."
           className="flex-1"
           value={props.input}
           onChange={props.handleInputChange}
@@ -108,7 +108,7 @@ export default function ChatInput(
           }}
         />
         <Button type="submit" disabled={props.isLoading || !props.input.trim()}>
-          Send message
+          Enviar
         </Button>
       </div>
     </form>

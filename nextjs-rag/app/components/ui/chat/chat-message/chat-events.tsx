@@ -17,7 +17,7 @@ export function ChatEvents({
 }) {
   const [isOpen, setIsOpen] = useState(false);
 
-  const buttonLabel = isOpen ? "Hide events" : "Show events";
+  const buttonLabel = isOpen ? "Esconder eventos" : "Mostrar eventos";
 
   const EventIcon = isOpen ? (
     <ChevronDown className="h-4 w-4" />

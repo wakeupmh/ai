@@ -51,7 +51,7 @@ export function ChatSources({ data }: { data: SourceData }) {
 
   return (
     <div className="space-x-2 text-sm">
-      <span className="font-semibold">Sources:</span>
+      <span className="font-semibold">Fontes:</span>
       <div className="inline-flex gap-1 items-center">
         {sources.map((nodeInfo: NodeInfo, index: number) => {
           if (nodeInfo.url?.endsWith(".pdf")) {
