@@ -82,6 +82,16 @@ async def run_dynamodb_agent(message):
                         - Convert natural language to structured DynamoDB queries.
                         - Return results in a readable format.
                         - Provide useful insights when possible.
+                        Use the following tools when you need to perform the queries:
+                        - dynamodb_batch_get: Batch get multiple items from DynamoDB tables
+                        - dynamodb_item_batch_write: Batch write operations (put/delete) for DynamoDB items
+                        - dynamodb_batch_execute: Execute multiple PartiQL statements in a batch
+                        - dynamodb_item_put: Put an item into a DynamoDB table
+                        - dynamodb_item_get: Get an item from a DynamoDB table 
+                        - dynamodb_item_update: Update an item in a DynamoDB table
+                        - dynamodb_item_delete: Delete an item from a DynamoDB table
+                        - dynamodb_item_query: Query items in a DynamoDB table
+                        - dynamodb_item_scan: Scan items in a DynamoDB table
                     """),
                     markdown=True,
                     show_tool_calls=True,
