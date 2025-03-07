@@ -1,9 +1,7 @@
-## Setup
-
 ### Requirements
 
 - Python 3.8+
-- Node.js and npm (for MCP GitHub server)
+- Node.js and npm (for MCP aws server)
   - This is a critical requirement! The app uses `npx` to run the MCP GitHub server
   - Download and install from [nodejs.org](https://nodejs.org/)
 - GitHub Personal Access Token with appropriate permissions
@@ -43,20 +41,3 @@
    - Enter your AWS credentials in the sidebar
    - Write your query in the box
    - Click "Run Query"
-
-### Example Queries
-
-#### Issues
-- "Show me issues by label"
-- "What issues are being actively discussed?"
-- "Find issues labeled as bugs"
-
-#### Pull Requests
-- "What PRs need review?"
-- "Show me recent merged PRs"
-- "Find PRs with conflicts"
-
-#### Repository
-- "Show repository health metrics"
-- "Show repository activity patterns"
-- "Analyze code quality trends"
