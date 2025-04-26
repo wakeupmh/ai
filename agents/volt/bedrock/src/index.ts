@@ -21,7 +21,7 @@ async function main() {
       description: "A reasoning assistant using a lightweight provider",
       // tools: [reasoningToolkit],
       llm: new VercelAIProvider(),
-      model: bedrock('anthropic.claude-3-7-sonnet-20250219-v1:0'),
+      model: bedrock('amazon.nova-lite-v1:0'),
       markdown: true,
     });
   
