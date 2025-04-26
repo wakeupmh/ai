@@ -8,7 +8,7 @@ async function main() {
       servers: {
         composio: {
           type: "http",
-          url: "https://mcp.composio.dev/composio/server/YOUR-SERVER-ID",
+          url: "https://mcp.composio.dev/composio/server/a95bddcb-ec53-4bba-8724-94b2d73a9c33",
         }
       },
     });
